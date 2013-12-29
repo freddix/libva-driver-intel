@@ -2,15 +2,15 @@
 
 Summary:	VA driver for Intel GPUs
 Name:		libva-driver-intel
-Version:	1.2.0
+Version:	1.2.2
 %if "%{gitver}" != "%{nil}"
 Release:        0.%{gitver}.1
 Source0:        http://cgit.freedesktop.org/intel-driver/snapshot/intel-driver-%{gitver}.tar.bz2
-# Source0-md5:	94ec975f16d1713bb798decc06baa507
+# Source0-md5:	c53e0eb50331382ff9780028d7542693
 %else
 Release:        1
 Source0:	http://cgit.freedesktop.org/vaapi/intel-driver/snapshot/intel-driver-%{version}.tar.xz
-# Source0-md5:	94ec975f16d1713bb798decc06baa507
+# Source0-md5:	c53e0eb50331382ff9780028d7542693
 %endif
 License:	BSD
 Group:		Libraries
