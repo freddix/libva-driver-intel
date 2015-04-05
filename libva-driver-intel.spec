@@ -1,17 +1,9 @@
-%define		gitver	%{nil}
-
 Summary:	VA driver for Intel GPUs
 Name:		libva-driver-intel
-Version:	1.4.1
-%if "%{gitver}" != "%{nil}"
-Release:        0.%{gitver}.1
-Source0:        http://cgit.freedesktop.org/intel-driver/snapshot/intel-driver-%{gitver}.tar.bz2
-# Source0-md5:	e48e04276676289e4b7be06f88612b13
-%else
+Version:	1.5.1
 Release:        1
 Source0:	http://cgit.freedesktop.org/vaapi/intel-driver/snapshot/intel-driver-%{version}.tar.gz
-# Source0-md5:	e48e04276676289e4b7be06f88612b13
-%endif
+# Source0-md5:	4891471ec8b8242d000224470e70e47b
 License:	BSD
 Group:		Libraries
 URL:		http://www.freedesktop.org/wiki/Software/vaapi
@@ -19,7 +11,7 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libdrm-devel
 BuildRequires:	libtool
-BuildRequires:	libva-devel
+BuildRequires:	libva-devel >= 1.5.0
 BuildRequires:	pkg-config
 Requires:	Mesa-dri-driver-intel-i965
 Requires:	xorg-driver-video-intel
@@ -29,11 +21,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 VA driver for Intel GPUs.
 
 %prep
-%if "%{gitver}" != "%{nil}"
-%setup -qn intel-driver-%{gitver}
-%else
 %setup -qn intel-driver-%{version}
-%endif
 
 %build
 %{__libtoolize}
